@@ -110,7 +110,7 @@ class BlackJack:
 
         
         font_points = pygame.font.SysFont(None, 60)
-        player_points = f"Player Points: {self.player.points}"
+        player_points = f"Player Points: {self.player.get_total()}"
         player_points = font_points.render(player_points, True, (255, 255, 255))
         self.screen.blit(player_points, (30, 650))
 
@@ -118,7 +118,7 @@ class BlackJack:
         if self.dealer.turn is False and self.end_game is False:
             dealer_points = f"Dealer Points: {self.dealer.get_first_card()}"
         else:
-            dealer_points = f"Dealer Points: {self.dealer.points}"
+            dealer_points = f"Dealer Points: {self.dealer.get_total()}"
         dealer_points = font_points.render(dealer_points, True, (255, 255, 255))
         self.screen.blit(dealer_points, (30, 35))
 

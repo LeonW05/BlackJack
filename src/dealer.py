@@ -21,10 +21,8 @@ class Dealer(Player):
     
     def get_first_card(self):
         if self.hand:
-            if self.hand[0].rank == 'A' and self.points + 11 <= 21:
+            if self.hand[0].rank == 'A':
                 return 11
-            elif self.hand[0].rank == 'A' and self.points + 11 > 21:
-                return 1
             elif self.hand[0].rank in ['J', 'Q', 'K']:
                 return 10
             else:
